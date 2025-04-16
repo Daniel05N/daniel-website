@@ -11,6 +11,15 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+      .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      max-width: 100%;
+      padding: 0 1rem;
+      }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #0f0f1a;
@@ -27,7 +36,13 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-    }
+    
+      }
+
+      header {
+      padding: 1.5rem 1.5rem;
+      flex-wrap: wrap;
+      }
     nav {
       background: rgba(255, 255, 255, 0.1);
       padding: 0.5rem 1rem;
