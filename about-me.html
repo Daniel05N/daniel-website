@@ -263,6 +263,13 @@
   <script>
     function toggleLanguage(switchInput) {
       const isSpanish = switchInput.checked;
+
+      document.getElementById('title-name').textContent = 'Daniel Neyra';
+      document.getElementById('nav-about_me').textContent = isSpanish ? 'Sobre mí' : 'About me';
+      document.getElementById('nav-skills').textContent = isSpanish ? 'Skills' : 'Skills';
+      document.getElementById('nav-experience').textContent = isSpanish ? 'Experiencia' : 'Experience';
+      document.getElementById('nav-projects').textContent = isSpanish ? 'Proyectos' : 'Projects';
+
       document.getElementById('page-title').textContent = isSpanish ? 'Timeline' : 'Timeline';
 
       document.getElementById('event1-title').textContent = isSpanish ? 'Mi primera pagina web ' : 'Build my first website';
