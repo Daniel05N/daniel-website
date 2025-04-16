@@ -118,52 +118,64 @@
       color: #ccc;
     }
 
-  </style>
+    .center-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* adjust spacing from top if needed */
+  }
 
-<style>
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
-    margin-left: 0.5rem;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #38bdf8;
-  }
-  input:checked + .slider:before {
-    transform: translateX(24px);
-  }
-</style>
+        /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      border: 1px solid transparent;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+      position:center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+      background-color: transparent;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+  </style>
 </head>
 <body>
 
   <header>
-    <h2><a href="index.html" class="home-link" id="title-name">Daniel Neyra</a></h2>
+    <h2><a href="site.html" class="home-link">Daniel Neyra</a></h2>
     <nav>
       <a href="about-me.html">About Me</a>
       <a href="skills.html">Skills</a>
@@ -187,7 +199,20 @@
       <span style="color: #ccc;">ES</span>
     </nav>
   </header>
-
+  <div class="center-wrapper">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="image2.jpg" alt="Avatar" style="width: 200%; height: 00%; object-fit: cover;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Daniel Neyra</h1>
+          <p>Traveler and part-time CS student</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <main class="fade-in">
     <h1 id="page-title">Timeline</h1>
 
