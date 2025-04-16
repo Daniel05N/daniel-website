@@ -80,26 +80,20 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat (auto-fit, minmax (160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1.5rem;
       max-width: 900px;
       margin: 0 auto;
     }
 
-      .skill-card {
-        padding: 1rem;
-        width: 250px; /* or smaller */
-        height: 80px;  /* adjust as needed */
-        border-radius: 1rem;
-        margin: 1rem auto;
-        background-color: #1a1a2e;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transition: transform 0.3s ease;
-      }
-
+    .skill-card {
+      background: #1c1c2c;
+      padding: 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
 
     .skill-card:hover {
       border-color: #38bdf8;
@@ -123,51 +117,11 @@
 
 
   </style>
-
-<style>
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
-    margin-left: 0.5rem;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #38bdf8;
-  }
-  input:checked + .slider:before {
-    transform: translateX(24px);
-  }
-</style>
 </head>
 <body>
 
   <header>
-    <h2><a href="index.html" class="home-link" id="title-name">Daniel Neyra</a></h2>
+    <h2><a href="site.html" class="home-link">Daniel Neyra</a></h2>
     <nav>
       <a href="about-me.html">About Me</a>
       <a href="skills.html">Skills</a>
