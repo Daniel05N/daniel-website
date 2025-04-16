@@ -80,7 +80,7 @@
     .timeline {
       position: relative;
       margin: 4rem auto;
-      padding-left: 2rem;
+      padding-left: 3rem;
       border-left: 2px solid #38bdf8;
       max-width: 700px;
     }
@@ -93,12 +93,16 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -11px;
+      left: -8px; /* Adjusted for better alignment */
       top: 5px;
       width: 14px;
       height: 14px;
       background: #38bdf8;
       border-radius: 50%;
+    }
+
+    .timeline-content {
+    margin-left: 1rem; /* NEW: pushes text right to avoid overlap */
     }
 
     .timeline-date {
