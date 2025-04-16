@@ -181,6 +181,13 @@
     function toggleLanguage(switchInput) {
       const isSpanish = switchInput.checked;
 
+      document.getElementById('title-name').textContent = 'Daniel Neyra';
+      document.getElementById('nav-about_me').textContent = isSpanish ? 'Sobre mí' : 'About me';
+      document.getElementById('nav-skills').textContent = isSpanish ? 'Skills' : 'Skills';
+      document.getElementById('nav-experience').textContent = isSpanish ? 'Experiencia' : 'Experience';
+      document.getElementById('nav-projects').textContent = isSpanish ? 'Proyectos' : 'Projects';
+
+
       document.getElementById('skills-title').textContent = isSpanish ? 'Mis habilidades' : 'My Skills';
         /* TO add more for for translating the page */
     }
