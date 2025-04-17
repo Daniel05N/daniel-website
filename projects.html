@@ -13,30 +13,42 @@
     }
 
     header {
-      padding: 2rem;
+      padding: 2rem 3rem;
       background-color: #121221;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .home-link:visited {
-    color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
+    .home-link,
+    .home-link:visited,
+    .home-link:active {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
+    }
 
     nav {
       background: #262636;
       border-radius: 50px;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       align-items: center;
     }
 
     nav a {
       color: #ccc;
       text-decoration: none;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -67,7 +79,7 @@
     .flip-card-inner {
       position: relative;
       width: 100%;
-      padding-top: 100%; /* make it square */
+      padding-top: 100%;
       transition: transform 0.8s;
       transform-style: preserve-3d;
     }
@@ -76,7 +88,8 @@
       transform: rotateY(180deg);
     }
 
-    .flip-card-front, .flip-card-back {
+    .flip-card-front,
+    .flip-card-back {
       position: absolute;
       top: 0;
       left: 0;
@@ -132,36 +145,57 @@
   </nav>
 </header>
 
+<h1 id="projects-title">My Projects</h1>
 
-  <h1>My Projects</h1>
-
-  <div class="grid">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front" style="background-image: url('images/project1.jpg');"></div>
-        <div class="flip-card-back">A research day at the library.</div>
-      </div>
+<div class="grid">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project1.jpg');"></div>
+      <div class="flip-card-back">A research day at the library.</div>
     </div>
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front" style="background-image: url('images/project2.jpg');"></div>
-        <div class="flip-card-back">Sky view of Arequipa.</div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front" style="background-image: url('images/project3.jpg');"></div>
-        <div class="flip-card-back">Flight into the pink sky.</div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front" style="background-image: url('images/project4.jpg');"></div>
-        <div class="flip-card-back">Machu Picchu exploration trip.</div>
-      </div>
-    </div>
-    <!-- Add more cards here following the same format -->
   </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project2.jpg');"></div>
+      <div class="flip-card-back">Sky view of Arequipa.</div>
+    </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project3.jpg');"></div>
+      <div class="flip-card-back">Flight into the pink sky.</div>
+    </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project4.jpg');"></div>
+      <div class="flip-card-back">Machu Picchu exploration trip.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleLanguage(switchInput) {
+    const isSpanish = switchInput.checked;
+
+    document.getElementById('title-name').textContent = 'Daniel Neyra';
+    document.getElementById('nav-about_me').textContent = isSpanish ? 'Sobre mí' : 'About me';
+    document.getElementById('nav-skills').textContent = isSpanish ? 'Skills' : 'Skills';
+    document.getElementById('nav-experience').textContent = isSpanish ? 'Experiencia' : 'Experience';
+    document.getElementById('nav-projects').textContent = isSpanish ? 'Proyectos' : 'Projects';
+    document.getElementById('projects-title').textContent = isSpanish ? 'Mis Proyectos' : 'My Projects';
+
+    const backTexts = document.querySelectorAll('.flip-card-back');
+    const texts = isSpanish
+      ? ['Un día de investigación en la biblioteca.', 'Vista aérea de Arequipa.', 'Vuelo hacia el cielo rosado.', 'Exploración a Machu Picchu.']
+      : ['A research day at the library.', 'Sky view of Arequipa.', 'Flight into the pink sky.', 'Machu Picchu exploration trip.'];
+
+    backTexts.forEach((el, i) => {
+      el.textContent = texts[i];
+    });
+  }
+</script>
+
 </body>
 </html>
 
