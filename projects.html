@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - Daniel Neyra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -61,25 +62,31 @@
       margin-top: 2rem;
     }
 
-    .grid {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     .flip-card {
       background-color: transparent;
       width: 100%;
+      aspect-ratio: 1 / 1;
       perspective: 1000px;
+    }
+
+    .flip-card.tall {
+      aspect-ratio: auto;
+      height: 310px;
     }
 
     .flip-card-inner {
       position: relative;
       width: 100%;
-      padding-top: 100%;
+      height: 100%;
       transition: transform 0.8s;
       transform-style: preserve-3d;
     }
@@ -116,86 +123,114 @@
       font-size: 0.9rem;
       color: #ccc;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      .flip-card.tall {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .flip-card.tall {
+        height: 230px;
+      }
+    }
   </style>
 </head>
 <body>
-<header>
-  <h2><a href="index.html" class="home-link" id="title-name">Daniel Neyra</a></h2>
-  <nav>
-    <a id="nav-about_me" href="about-me.html">About Me</a>
-    <a id="nav-skills" href="skills.html">Skills</a>
-    <a id="nav-experience" href="experience.html">Experience</a>
-    <a id="nav-projects" href="projects.html">Projects</a>
-    <span style="color: #ccc;">EN</span>
-    <label style="position: relative; display: inline-block; width: 50px; height: 26px; margin: 0 0.5rem;">
-      <input type="checkbox" id="languageToggle" style="opacity: 0; width: 0; height: 0;" onchange="toggleLanguage(this)">
-      <span style="
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: .4s;
-        border-radius: 34px;">
-      </span>
-    </label>
-    <span style="color: #ccc;">ES</span>
-  </nav>
-</header>
 
-<h1 id="projects-title">My Projects</h1>
+  <header>
+    <h2><a href="index.html" class="home-link" id="title-name">Daniel Neyra</a></h2>
+    <nav>
+      <a id="nav-about_me" href="about-me.html">About Me</a>
+      <a id="nav-skills" href="skills.html">Skills</a>
+      <a id="nav-experience" href="experience.html">Experience</a>
+      <a id="nav-projects" href="projects.html">Projects</a>
+      <span style="color: #ccc;">EN</span>
+      <label style="position: relative; display: inline-block; width: 50px; height: 26px; margin: 0 0.5rem;">
+        <input type="checkbox" id="languageToggle" style="opacity: 0; width: 0; height: 0;" onchange="toggleLanguage(this)">
+        <span style="
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: .4s;
+          border-radius: 34px;">
+        </span>
+      </label>
+      <span style="color: #ccc;">ES</span>
+    </nav>
+  </header>
 
-<div class="grid">
-  <div class="flip-card">
-    <div class="flip-card-inner">
+  <h1 id="projects-title">My Projects</h1>
+
+  <div class="gallery">
+    <!-- Left column -->
+    <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('images/project1.jpg');"></div>
       <div class="flip-card-back">A research day at the library.</div>
-    </div>
-  </div>
-  <div class="flip-card">
-    <div class="flip-card-inner">
+    </div></div>
+    
+    <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('images/project2.jpg');"></div>
       <div class="flip-card-back">Sky view of Arequipa.</div>
-    </div>
-  </div>
-  <div class="flip-card">
-    <div class="flip-card-inner">
+    </div></div>
+
+    <!-- Center column (tall) -->
+    <div class="flip-card tall"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('images/project3.jpg');"></div>
       <div class="flip-card-back">Flight into the pink sky.</div>
-    </div>
-  </div>
-  <div class="flip-card">
-    <div class="flip-card-inner">
+    </div></div>
+
+    <!-- Left column continued -->
+    <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('images/project4.jpg');"></div>
-      <div class="flip-card-back">Machu Picchu exploration trip.</div>
-    </div>
+      <div class="flip-card-back">Exploration at Machu Picchu.</div>
+    </div></div>
+
+    <!-- Right column -->
+    <div class="flip-card"><div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project5.jpg');"></div>
+      <div class="flip-card-back">Fun with friends under the sun.</div>
+    </div></div>
+
+    <div class="flip-card"><div class="flip-card-inner">
+      <div class="flip-card-front" style="background-image: url('images/project6.jpg');"></div>
+      <div class="flip-card-back">Family day at the museum.</div>
+    </div></div>
   </div>
-</div>
 
-<script>
-  function toggleLanguage(switchInput) {
-    const isSpanish = switchInput.checked;
+  <script>
+    function toggleLanguage(switchInput) {
+      const isSpanish = switchInput.checked;
 
-    document.getElementById('title-name').textContent = 'Daniel Neyra';
-    document.getElementById('nav-about_me').textContent = isSpanish ? 'Sobre mí' : 'About me';
-    document.getElementById('nav-skills').textContent = isSpanish ? 'Skills' : 'Skills';
-    document.getElementById('nav-experience').textContent = isSpanish ? 'Experiencia' : 'Experience';
-    document.getElementById('nav-projects').textContent = isSpanish ? 'Proyectos' : 'Projects';
-    document.getElementById('projects-title').textContent = isSpanish ? 'Mis Proyectos' : 'My Projects';
+      document.getElementById('title-name').textContent = 'Daniel Neyra';
+      document.getElementById('nav-about_me').textContent = isSpanish ? 'Sobre mí' : 'About me';
+      document.getElementById('nav-skills').textContent = isSpanish ? 'Skills' : 'Skills';
+      document.getElementById('nav-experience').textContent = isSpanish ? 'Experiencia' : 'Experience';
+      document.getElementById('nav-projects').textContent = isSpanish ? 'Proyectos' : 'Projects';
+      document.getElementById('projects-title').textContent = isSpanish ? 'Mis Proyectos' : 'My Projects';
 
-    const backTexts = document.querySelectorAll('.flip-card-back');
-    const texts = isSpanish
-      ? ['Un día de investigación en la biblioteca.', 'Vista aérea de Arequipa.', 'Vuelo hacia el cielo rosado.', 'Exploración a Machu Picchu.']
-      : ['A research day at the library.', 'Sky view of Arequipa.', 'Flight into the pink sky.', 'Machu Picchu exploration trip.'];
+      const backTexts = document.querySelectorAll('.flip-card-back');
+      const texts = isSpanish
+        ? ['Un día de investigación en la biblioteca.', 'Vista aérea de Arequipa.', 'Vuelo hacia el cielo rosado.', 'Exploración en Machu Picchu.', 'Diversión con amigos bajo el sol.', 'Día en familia en el museo.']
+        : ['A research day at the library.', 'Sky view of Arequipa.', 'Flight into the pink sky.', 'Exploration at Machu Picchu.', 'Fun with friends under the sun.', 'Family day at the museum.'];
 
-    backTexts.forEach((el, i) => {
-      el.textContent = texts[i];
-    });
-  }
-</script>
+      backTexts.forEach((el, i) => {
+        el.textContent = texts[i];
+      });
+    }
+  </script>
 
 </body>
 </html>
-
