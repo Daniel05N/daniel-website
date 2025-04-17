@@ -172,41 +172,41 @@
     </nav>
   </header>
 
-  <h1 id="projects-title">My Projects</h1>
+  <h1 id="projects-title">The Project</h1>
 
   <div class="gallery">
     <!-- Left column -->
     <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('pelu.jpeg');"></div>
-      <div class="flip-card-back">A research day at the library.</div>
+      <div class="flip-card-back">My pet.</div>
     </div></div>
     
     <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('me.jpeg');"></div>
-      <div class="flip-card-back">Sky view of Arequipa.</div>
+      <div class="flip-card-back">Who I am .</div>
     </div></div>
 
     <!-- Center column (tall) -->
     <div class="flip-card tall"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('trip.jpeg');"></div>
-      <div class="flip-card-back">Flight into the pink sky.</div>
+      <div class="flip-card-back">Traveling</div>
     </div></div>
 
     <!-- Left column continued -->
     <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('image.jpeg');"></div>
-      <div class="flip-card-back">Exploration at Machu Picchu.</div>
+      <div class="flip-card-back">Family</div>
     </div></div>
 
     <!-- Right column -->
     <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('uni.jpeg');"></div>
-      <div class="flip-card-back">Fun with friends under the sun.</div>
+      <div class="flip-card-back">Now</div>
     </div></div>
 
     <div class="flip-card"><div class="flip-card-inner">
       <div class="flip-card-front" style="background-image: url('cs.jpeg');"></div>
-      <div class="flip-card-back">Family day at the museum.</div>
+      <div class="flip-card-back">What I'm passionate about</div>
     </div></div>
   </div>
 
@@ -223,8 +223,8 @@
 
       const backTexts = document.querySelectorAll('.flip-card-back');
       const texts = isSpanish
-        ? ['Un día de investigación en la biblioteca.', 'Vista aérea de Arequipa.', 'Vuelo hacia el cielo rosado.', 'Exploración en Machu Picchu.', 'Diversión con amigos bajo el sol.', 'Día en familia en el museo.']
-        : ['A research day at the library.', 'Sky view of Arequipa.', 'Flight into the pink sky.', 'Exploration at Machu Picchu.', 'Fun with friends under the sun.', 'Family day at the museum.'];
+      ? ['Mi mascota.', 'Quién soy.', 'Viajar.', 'Familia.', 'Ahora.', 'Lo que me apasiona.']
+      : ['My pet.', 'Who I am.', 'Traveling', 'Family', 'Now', "What I'm passionate about"];
 
       backTexts.forEach((el, i) => {
         el.textContent = texts[i];
